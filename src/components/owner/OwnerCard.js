@@ -9,7 +9,7 @@ class OwnerCard extends Component {
                   <img src={require('./dogOwner.png')} alt="dog owner" />
                 </picture>
                 <h2>Name: <span className="card-ownername">{this.props.owner.name}</span></h2>
-                <p>Owns: {this.props.owner.owns}</p>
+                <p>Contact #: {this.props.owner.phoneNumber}</p>
               </div>
           </div>
         );

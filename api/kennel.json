@@ -54,17 +54,20 @@
         {
             "id": 1,
             "name": "William H Macy",
-            "owns": "Doodles the Poodle"
+            "phoneNumber": "213 555-5555",
+            "animalId": 1
         },
         {
             "id": 2,
             "name": "Christopher Walken",
-            "owns": "Decker the German Sheperd"
+            "phoneNumber": "213 555-1111",
+            "animalId": 3
         },
         {
             "id": 3,
             "name": "Tiger Woods",
-            "owns": "Esme the pitbull"
+            "phoneNumber": "561 555-9999",
+            "animalId": 2
         }
     ]
 }

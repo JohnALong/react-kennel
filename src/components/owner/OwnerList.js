@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 //import the components we will need
 import OwnerCard from './OwnerCard'
-import OwnerManager from '../../modules/OwnerManager'
+import APIManager from '../../modules/APIManager'
 
 class OwnerList extends Component {
     //define what this component needs to render
@@ -11,8 +11,9 @@ class OwnerList extends Component {
 
 componentDidMount(){
     console.log("OWNER LIST: ComponentDidMount");
+    const owners = "owners"
     //getAll from AnimalManager and hang on to that data; put it in state
-    OwnerManager.getAll()
+    APIManager.getAll(owners)
     .then((owners) => {
         this.setState({
             owners: owners
