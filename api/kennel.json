@@ -1,0 +1,70 @@
+{
+    "animals": [
+        {
+            "id": 1,
+            "name": "Doodles",
+            "breed": "Poodle"
+        },
+        {
+            "id": 2,
+            "name": "Decker",
+            "breed": "German Sheperd"
+        },
+        {
+            "id": 3,
+            "name": "Esme",
+            "breed": "Pitbull"
+        }
+    ],
+    "employees": [
+        {
+            "id": 1,
+            "name": "Sarah",
+            "title": "manager"
+        },
+        {
+            "id": 2,
+            "name": "Steve",
+            "title": "Lead Veteranarian"
+        },
+        {
+            "id": 3,
+            "name": "Stephanie",
+            "title": "Asst Veteranarian"
+        }
+    ],
+    "locations": [
+        {
+            "id": 1,
+            "street": "123 Midtown",
+            "city": "Nashville"
+        },
+        {
+            "id": 2,
+            "street": "456 Outskirts",
+            "city": "Hendersonville"
+        },
+        {
+            "id": 3,
+            "street": "789 Out of Town",
+            "city": "Clarksville"
+        }
+    ],
+    "owners": [
+        {
+            "id": 1,
+            "name": "William H Macy",
+            "owns": "Doodles the Poodle"
+        },
+        {
+            "id": 2,
+            "name": "Christopher Walken",
+            "owns": "Decker the German Sheperd"
+        },
+        {
+            "id": 3,
+            "name": "Tiger Woods",
+            "owns": "Esme the pitbull"
+        }
+    ]
+}
