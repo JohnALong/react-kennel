@@ -21,17 +21,33 @@ componentDidMount(){
     })
 }
 
-render(){
-    console.log("OWNER LIST: Render");
+deleteOwner = (id) => {
+    APIManager.delete("owners", id)
+      .then(() => {
+        APIManager.getAll("owners")
+          .then((newOwners) => {
+            this.setState({
+              owners: newOwners
+            })
+          })
+      })
+  }
 
-    return(
-        <div className="container-cards">
-               {this.state.owners.map(owner =>
-        <OwnerCard key={owner.id} owner={owner} />
-      )}
-        </div>
+  render() {
+    console.log("OwnerList: Render");
+
+    return (
+      <div className="container-cards">
+        {this.state.owners.map(owner =>
+          <OwnerCard
+            key={owner.id}
+            owner={owner}
+            deleteOwner={this.deleteOwner}
+          />
+        )}
+      </div>
     )
-}
+  }
 }
 
 export default OwnerList

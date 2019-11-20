@@ -1,73 +1,76 @@
 {
-    "animals": [
-        {
-            "id": 1,
-            "name": "Doodles",
-            "breed": "Poodle"
-        },
-        {
-            "id": 2,
-            "name": "Decker",
-            "breed": "German Sheperd"
-        },
-        {
-            "id": 3,
-            "name": "Esme",
-            "breed": "Pitbull"
-        }
-    ],
-    "employees": [
-        {
-            "id": 1,
-            "name": "Sarah",
-            "title": "manager"
-        },
-        {
-            "id": 2,
-            "name": "Steve",
-            "title": "Lead Veteranarian"
-        },
-        {
-            "id": 3,
-            "name": "Stephanie",
-            "title": "Asst Veteranarian"
-        }
-    ],
-    "locations": [
-        {
-            "id": 1,
-            "street": "123 Midtown",
-            "city": "Nashville"
-        },
-        {
-            "id": 2,
-            "street": "456 Outskirts",
-            "city": "Hendersonville"
-        },
-        {
-            "id": 3,
-            "street": "789 Out of Town",
-            "city": "Clarksville"
-        }
-    ],
-    "owners": [
-        {
-            "id": 1,
-            "name": "William H Macy",
-            "phoneNumber": "213 555-5555",
-            "animalId": 1
-        },
-        {
-            "id": 2,
-            "name": "Christopher Walken",
-            "phoneNumber": "213 555-1111",
-            "animalId": 3
-        },
-        {
-            "id": 3,
-            "name": "Tiger Woods",
-            "phoneNumber": "561 555-9999",
-            "animalId": 2
-        }
-    ]
+  "animals": [
+    {
+      "id": 1,
+      "name": "Doodles",
+      "breed": "Poodle",
+      "employeeId": 2
+    },
+    {
+      "id": 2,
+      "name": "Decker",
+      "breed": "German Sheperd",
+      "employeeId": 3
+    },
+    {
+      "id": 3,
+      "name": "Esme",
+      "breed": "Pitbull",
+      "employeeId": 1
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Sarah",
+      "title": "manager"
+    },
+    {
+      "id": 2,
+      "name": "Steve",
+      "title": "Lead Veteranarian"
+    },
+    {
+      "id": 3,
+      "name": "Stephanie",
+      "title": "Asst Veteranarian"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "street": "123 Midtown",
+      "city": "Nashville"
+    },
+    {
+      "id": 2,
+      "street": "456 Outskirts",
+      "city": "Hendersonville"
+    },
+    {
+      "id": 3,
+      "street": "789 Out of Town",
+      "city": "Clarksville"
+    }
+  ],
+  "owners": [
+    {
+        "id": 1,
+        "name": "William H Macy",
+        "phoneNumber": "213 555-5555",
+        "animalId": 1
+    },
+    {
+        "id": 2,
+        "name": "Christopher Walken",
+        "phoneNumber": "213 555-1111",
+        "animalId": 3
+    },
+    {
+        "id": 3,
+        "name": "Tiger Woods",
+        "phoneNumber": "561 555-9999",
+        "animalId": 2
+    }
+  ]
 }
