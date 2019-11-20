@@ -3,17 +3,20 @@
         {
             "id": 1,
             "name": "Doodles",
-            "breed": "Poodle"
+            "breed": "Poodle",
+            "employeeId": 2
         },
         {
             "id": 2,
             "name": "Decker",
-            "breed": "German Sheperd"
+            "breed": "German Sheperd",
+            "employeeId": 3
         },
         {
             "id": 3,
             "name": "Esme",
-            "breed": "Pitbull"
+            "breed": "Pitbull",
+            "employeeId": 1
         }
     ],
     "employees": [
