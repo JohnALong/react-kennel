@@ -3,20 +3,34 @@
         {
             "id": 1,
             "name": "Doodles",
-            "breed": "Poodle",
-            "employeeId": 2
+            "breed": "Poodle"
         },
         {
             "id": 2,
             "name": "Decker",
-            "breed": "German Sheperd",
-            "employeeId": 3
+            "breed": "German Sheperd"
         },
         {
             "id": 3,
             "name": "Esme",
-            "breed": "Pitbull",
-            "employeeId": 1
+            "breed": "Pitbull"
+        }
+    ],
+    "employeeAnimals": [
+        {
+            "id": 1,
+            "animalId": 1,
+            "employeeId": 2
+        },
+        {
+            "id": 2,
+            "animalId": 2,
+            "employeeId": 3
+        },
+        {
+            "id": 3,
+            "animalId": 3,
+            "employeeId": 2
         }
     ],
     "employees": [
@@ -57,19 +71,33 @@
         {
             "id": 1,
             "name": "William H Macy",
-            "phoneNumber": "213 555-5555",
-            "animalId": 1
+            "phoneNumber": "213 555-5555"
         },
         {
             "id": 2,
             "name": "Christopher Walken",
-            "phoneNumber": "213 555-1111",
-            "animalId": 3
+            "phoneNumber": "213 555-1111"
         },
         {
             "id": 3,
             "name": "Tiger Woods",
-            "phoneNumber": "561 555-9999",
+            "phoneNumber": "561 555-9999"
+        }
+    ],
+    "animalOwners": [
+        {
+            "id": 1,
+            "ownerId": 1,
+            "animalId": 1
+        },
+        {
+            "id": 2,
+            "ownerId": 2,
+            "animalId": 3
+        },
+        {
+            "id": 3,
+            "ownerId": 3,
             "animalId": 2
         }
     ]
