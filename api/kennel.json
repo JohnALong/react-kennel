@@ -9,6 +9,21 @@
       "id": 2,
       "name": "Decker",
       "breed": "German Sheperd"
+    },
+    {
+      "id": 3,
+      "name": "Esme",
+      "breed": "Pitbull"
+    },
+    {
+      "name": "Mrs. Critter",
+      "breed": "Pekinese",
+      "id": 4
+    },
+    {
+      "name": "Fred",
+      "breed": "Doberman",
+      "id": 5
     }
   ],
   "employeeAnimals": [

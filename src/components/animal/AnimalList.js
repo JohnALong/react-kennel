@@ -12,9 +12,9 @@ class AnimalList extends Component {
     loadingStatus: true,
   }
 
-// first step of render process - puts empty data structure on dom while waiting for fetch to complete and then populate the data on a 2nd render call
+  // first step of render process - puts empty data structure on dom while waiting for fetch to complete and then populate the data on a 2nd render call
 
-// set loadingStatus key value to true since data will now be present and delete button will need to work
+  // set loadingStatus key value to true since data will now be present and delete button will need to work
 
   componentDidMount() {
     console.log("ANIMAL LIST: ComponentDidMount");
@@ -28,7 +28,7 @@ class AnimalList extends Component {
       })
   }
 
-// delete function takes id as parameter to know what to delete from api, and then does call for all data again and resets state so the change will cause dom to re render
+  // delete function takes id as parameter to know what to delete from api, and then does call for all data again and resets state so the change will cause dom to re render
 
   deleteAnimal = (id) => {
     APIManager.delete("animals", id)
@@ -42,22 +42,30 @@ class AnimalList extends Component {
       })
   }
 
-// render call to populate all cards to dom
-// calls the AnimalCard class defined in AnimalCard.js and defines what goes in each card section
+  // render call to populate all cards to dom
+  // calls the AnimalCard class defined in AnimalCard.js and defines what goes in each card section
   render() {
     console.log("AnimalList: Render");
     console.log("render in animal list", this.state)
 
     return (
-      <div className="container-cards">
-        {this.state.animals.map(animal =>
-          <AnimalCard
-            key={animal.id}
-            animal={animal}
-            deleteAnimal={this.deleteAnimal}
-          />
-        )}
-      </div>
+      <React.Fragment>
+        <section className="section-content">
+          <button type="button" className="btn"
+            onClick={() => { this.props.history.push("/animals/new") }}>
+            Admit Animal
+  </button>
+        </section>
+        <div className="container-cards">
+          {this.state.animals.map(animal =>
+            <AnimalCard
+              key={animal.id}
+              animal={animal}
+              deleteAnimal={this.deleteAnimal}
+            />
+          )}
+        </div>
+      </React.Fragment>
     )
   }
 
