@@ -5,6 +5,7 @@ import AnimalDetail from "./animal/AnimalDetail"
 import EmployeeDetail from "./employee/EmployeeDetail"
 import LocationDetail from "./location/LocationDetail"
 import OwnerDetail from "./owner/OwnerDetail"
+import AnimalForm from "./animal/AnimalForm"
 
 import AnimalList from './animal/AnimalList'
 import LocationList from './location/LocationList'
@@ -28,9 +29,14 @@ class ApplicationViews extends Component {
         <Route exact path="/" render={(props) => {
           return <Home />
         }} />
+
+        <Route path="/animals/new" render={(props) => {
+          return <AnimalForm {...props} />
+        }} />
+        
         {/* Make sure you add the `exact` attribute here */}
         <Route exact path="/animals" render={(props) => {
-          return <AnimalList />
+          return <AnimalList {...props} />
         }} />
         <Route path="/animals/:animalId(\d+)" render={(props) => {
           console.log("props from animal id path", props)
