@@ -16,9 +16,14 @@
       "breed": "Pitbull"
     },
     {
-      "name": "Snickers",
-      "breed": "Collie",
+      "name": "Mrs. Critter",
+      "breed": "Pekinese",
       "id": 4
+    },
+    {
+      "name": "Fred",
+      "breed": "Doberman",
+      "id": 5
     }
   ],
   "employeeAnimals": [

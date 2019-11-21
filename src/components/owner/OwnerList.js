@@ -4,25 +4,25 @@ import OwnerCard from './OwnerCard'
 import APIManager from '../../modules/APIManager'
 
 class OwnerList extends Component {
-    //define what this component needs to render
-    state = {
-        owners: [],
-        loadingStatus: true,
-    }
+  //define what this component needs to render
+  state = {
+    owners: [],
+    loadingStatus: true,
+  }
 
-componentDidMount(){
+  componentDidMount() {
     console.log("OWNER LIST: ComponentDidMount");
     //getAll from AnimalManager and hang on to that data; put it in state
     APIManager.getAll("owners")
-    .then((owners) => {
+      .then((owners) => {
         this.setState({
-            owners: owners,
-            loadingStatus: false
+          owners: owners,
+          loadingStatus: false
         })
-    })
-}
+      })
+  }
 
-deleteOwner = (id) => {
+  deleteOwner = (id) => {
     APIManager.delete("owners", id)
       .then(() => {
         APIManager.getAll("owners")
@@ -38,15 +38,21 @@ deleteOwner = (id) => {
     console.log("OwnerList: Render");
 
     return (
-      <div className="container-cards">
-        {this.state.owners.map(owner =>
-          <OwnerCard
-            key={owner.id}
-            owner={owner}
-            deleteOwner={this.deleteOwner}
-          />
-        )}
-      </div>
+      <React.Fragment>
+        <section className="section-content">
+          <button type="button" className="btn"
+            onClick={() => { this.props.history.push("/owners/new") }}>New Owner</button>
+        </section>
+        <div className="container-cards">
+          {this.state.owners.map(owner =>
+            <OwnerCard
+              key={owner.id}
+              owner={owner}
+              deleteOwner={this.deleteOwner}
+            />
+          )}
+        </div>
+      </React.Fragment>
     )
   }
 }
