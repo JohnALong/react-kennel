@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom"
 import './NavBar.css'
+// building NavBar component for render from Kennel.js - notice links and pathing for each section - pathing defined in ApplicationViews.js 
+
 
 class NavBar extends Component {
 

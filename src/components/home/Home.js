@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+// home component for NavBar.js defining what's populated to dom
+
 class Home extends Component {
   render() {
     return (

@@ -7,16 +7,17 @@ class EmployeeList extends Component {
     //define what this component needs to render
     state = {
         employees: [],
+        loadingStatus: true
     }
 
     componentDidMount() {
         console.log("EMPLOYEE LIST: ComponentDidMount");
-        const employees = "employees"
-        //getAll from AnimalManager and hang on to that data; put it in state
-        APIManager.getAll(employees)
+        //getAll from APIManager and hang on to that data; put it in state
+        APIManager.getAll("employees")
             .then((employees) => {
                 this.setState({
-                    employees: employees
+                    employees: employees,
+                    loadingStatus: false
                 })
             })
     }
