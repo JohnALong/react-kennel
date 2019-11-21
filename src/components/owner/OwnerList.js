@@ -7,16 +7,17 @@ class OwnerList extends Component {
     //define what this component needs to render
     state = {
         owners: [],
+        loadingStatus: true,
     }
 
 componentDidMount(){
     console.log("OWNER LIST: ComponentDidMount");
-    const owners = "owners"
     //getAll from AnimalManager and hang on to that data; put it in state
-    APIManager.getAll(owners)
+    APIManager.getAll("owners")
     .then((owners) => {
         this.setState({
-            owners: owners
+            owners: owners,
+            loadingStatus: false
         })
     })
 }

@@ -7,16 +7,17 @@ class LocationList extends Component {
     //define what this component needs to render
     state = {
         locations: [],
+        loadingStatus: true
     }
 
 componentDidMount(){
     console.log("LOCATION LIST: ComponentDidMount");
-    const locations = "locations"
     //getAll from AnimalManager and hang on to that data; put it in state
-    APIManager.getAll(locations)
+    APIManager.getAll("locations")
     .then((locations) => {
         this.setState({
-            locations: locations
+            locations: locations,
+            loadingStatus: false
         })
     })
 }
