@@ -1,24 +1,28 @@
 import { Route, Redirect } from 'react-router-dom'
 import React, { Component } from 'react'
+
 import Home from './home/Home'
-import AnimalDetail from "./animal/AnimalDetail"
-import EmployeeDetail from "./employee/EmployeeDetail"
-import LocationDetail from "./location/LocationDetail"
-import OwnerDetail from "./owner/OwnerDetail"
-import AnimalForm from "./animal/AnimalForm"
-import OwnerForm from "./owner/OwnerForm"
-import EmployeeForm from "./employee/EmployeeForm"
-import LocationForm from "./location/LocationForm"
 import Login from './auth/Login'
-import AnimalEditForm from './animal/AnimalEditForm'
-import OwnerEditForm from './owner/OwnerEditForm'
-import LocationEditForm from './location/LocationEditForm'
-import EmployeeEditForm from './employee/EmployeeEditForm'
 
 import AnimalList from './animal/AnimalList'
+import AnimalDetail from "./animal/AnimalDetail"
+import AnimalForm from "./animal/AnimalForm"
+import AnimalEditForm from './animal/AnimalEditForm'
+
 import LocationList from './location/LocationList'
+import LocationDetail from "./location/LocationDetail"
+import LocationForm from "./location/LocationForm"
+import LocationEditForm from './location/LocationEditForm'
+
 import EmployeeList from './employee/EmployeeList'
+import EmployeeDetail from "./employee/EmployeeDetail"
+import EmployeeForm from "./employee/EmployeeForm"
+import EmployeeEditForm from './employee/EmployeeEditForm'
+
 import OwnerList from './owner/OwnerList'
+import OwnerDetail from "./owner/OwnerDetail"
+import OwnerForm from "./owner/OwnerForm"
+import OwnerEditForm from './owner/OwnerEditForm'
 
 // called on Kennel.js (equal to main.js from before)
 
