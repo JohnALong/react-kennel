@@ -80,7 +80,11 @@ class ApplicationViews extends Component {
         }} />
         {/* Make sure you add the `exact` attribute here */}
         <Route exact path="/employees" render={(props) => {
-          return <EmployeeList {...props} />
+          if (this.isAuthenticated()) {
+            return <EmployeeList {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
         }} />
         <Route exact path="/employees/:employeeId(\d+)" render={(props) => {
           // Pass the employeeId to the EmployeeDetailComponent
@@ -95,7 +99,11 @@ class ApplicationViews extends Component {
           return <LocationForm {...props} />
         }} />
         <Route exact path="/locations" render={(props) => {
-          return <LocationList {...props} />
+           if (this.isAuthenticated()) {
+            return <LocationList {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
         }} />
         <Route exact path="/locations/:locationId(\d+)" render={(props) => {
           // Pass the locationId to the LocationDetailComponent
@@ -110,7 +118,11 @@ class ApplicationViews extends Component {
           return <OwnerForm {...props} />
         }} />
         <Route exact path="/owners" render={(props) => {
-          return <OwnerList {...props} />
+           if (this.isAuthenticated()) {
+            return <OwnerList {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
         }} />
         <Route exact path="/owners/:ownerId(\d+)" render={(props) => {
           // Pass the locationId to the LocationDetailComponent
