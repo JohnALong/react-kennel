@@ -1,58 +1,61 @@
 {
   "animals": [
     {
-      "id": 1,
-      "name": "Doodles",
-      "breed": "Poodle"
-    },
-    {
-      "id": 2,
-      "name": "I'm not Decker",
-      "breed": "German Sheperd"
-    },
-    {
       "id": 3,
       "name": "Esme",
-      "breed": "Pitbull"
+      "breed": "Pitbull",
+      "employeeId": 3
     },
     {
-      "name": "Mrs. Critter",
-      "breed": "Pekinese",
-      "id": 4
+      "name": "Jack",
+      "breed": "Big cat",
+      "id": 4,
+      "employeeId": 1
     },
     {
-      "name": "Fred",
-      "breed": "Doberman",
-      "id": 5
-    }
-  ],
-  "employeeAnimals": [
-    {
-      "id": 1,
-      "animalId": 1,
-      "employeeId": 2
+      "id": 5,
+      "name": "Angus",
+      "breed": "Gerbil",
+      "employeeId": 1
     },
     {
-      "id": 2,
-      "animalId": 2,
+      "name": "Kitty",
+      "breed": "Cat",
+      "id": 6,
+      "employeeId": 1
+    },
+    {
+      "id": 7,
+      "name": "Basil",
+      "breed": "Persian cat",
       "employeeId": 3
     }
   ],
+  "employeeAnimals": [],
   "employees": [
     {
       "id": 1,
       "name": "Sarah",
-      "title": "manager"
+      "title": "lead manager",
+      "locationId": 1
     },
     {
       "id": 2,
       "name": "Fred",
-      "title": "Lead Veteranarian"
+      "title": "Lead Veteranarian",
+      "locationId": 3
     },
     {
       "id": 3,
       "name": "Stephanie",
-      "title": "Asst Veteranarian"
+      "title": "Asst Veteranarian",
+      "locationId": 3
+    },
+    {
+      "name": "Adam Sandler",
+      "title": "head penguin guy",
+      "locationId": 2,
+      "id": 4
     }
   ],
   "locations": [
@@ -89,16 +92,5 @@
       "phoneNumber": "561 555-9999"
     }
   ],
-  "animalOwners": [
-    {
-      "id": 1,
-      "ownerId": 1,
-      "animalId": 1
-    },
-    {
-      "id": 3,
-      "ownerId": 3,
-      "animalId": 2
-    }
-  ]
+  "animalOwners": []
 }

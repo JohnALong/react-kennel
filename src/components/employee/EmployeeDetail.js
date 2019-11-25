@@ -31,6 +31,7 @@ class EmployeeDetail extends Component {
     }
 
     render() {
+        console.log("state in empl detail render", this.state)
         return (
             <div className="card">
                 <div className="card-content">

@@ -6,7 +6,9 @@ class EmployeeForm extends Component {
     state = {
         employeeName: "",
         title: "",
+        locationId: "",
         loadingStatus: false,
+        locations: []
     };
 
     handleFieldChange = evt => {
@@ -15,6 +17,23 @@ class EmployeeForm extends Component {
         console.log("state to change", stateToChange)
         this.setState(stateToChange);
     };
+
+    // need a componentDidMount since will now be calling data to populate form with locations
+
+    componentDidMount() {
+        APIManager.getAll("locations")
+            .then(employee => {
+                this.setState({
+                    employeeName: employee.name,
+                    title: employee.title,
+                    locationId: employee.locationId,
+                    loadingStatus: false,
+                });
+            });
+
+        APIManager.getAll("locations")
+            .then(locations => this.setState({ locations: locations }))
+    }
 
     /*  Local method for validation, set loadingStatus, create animal      object, invoke the AnimalManager post method, and redirect to the full animal list
     */
@@ -28,6 +47,7 @@ class EmployeeForm extends Component {
             const employee = {
                 name: this.state.employeeName,
                 title: this.state.title,
+                locationId: parseInt(this.state.locationId)
             };
 
             // Create the animal and redirect user to animal list
@@ -37,7 +57,7 @@ class EmployeeForm extends Component {
     };
 
     render() {
-
+        console.log("render emp form", this.state)
         return (
             <>
                 <form>
@@ -45,11 +65,23 @@ class EmployeeForm extends Component {
                         <div className="formgrid">
                             <input
                                 type="text" required onChange={this.handleFieldChange} id="employeeName"
-                                placeholder="Employee name"/>
+                                placeholder="Employee name" />
                             <label htmlFor="employeeName">Name</label>
                             <input type="text" required onChange={this.handleFieldChange} id="title"
-                                placeholder="Title"/>
+                                placeholder="Title" />
                             <label htmlFor="title">Title</label>
+                            <select
+                                className="form-control"
+                                id="locationId"
+                                value={this.state.locationId}
+                                onChange={this.handleFieldChange}
+                            >
+                                {this.state.locations.map(location =>
+                                    <option key={location.id} value={location.id}>
+                                        {location.street}
+                                    </option>
+                                )}
+                            </select>
                         </div>
                         <div className="alignRight">
                             <button

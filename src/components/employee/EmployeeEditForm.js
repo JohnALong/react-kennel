@@ -7,7 +7,9 @@ class EmployeeEditForm extends Component {
     state = {
         employeeName: "",
         title: "",
+        locationId: "",
         loadingStatus: true,
+        locations: []
     };
 
     handleFieldChange = evt => {
@@ -22,7 +24,8 @@ class EmployeeEditForm extends Component {
         const editedEmployee = {
             id: this.props.match.params.employeeId,
             name: this.state.employeeName,
-            title: this.state.title
+            title: this.state.title,
+            locationId: Number(this.state.locationId)
         };
 
         APIManager.update("employees", editedEmployee)
@@ -35,9 +38,13 @@ class EmployeeEditForm extends Component {
                 this.setState({
                     employeeName: employee.name,
                     title: employee.title,
+                    locationId: employee.locationId,
                     loadingStatus: false,
                 });
             });
+
+            APIManager.getAll("locations")
+            .then(locations => this.setState({locations: locations}))
     }
 
     render() {
@@ -53,6 +60,19 @@ class EmployeeEditForm extends Component {
                             <label htmlFor="employeeName">Employee Name</label>
                             <input type="text" required className="form-control" onChange={this.handleFieldChange} id="title" value={this.state.title} />
                             <label htmlFor="title">Title</label>
+
+                            <select
+                                className="form-control"
+                                id="locationId"
+                                value={this.state.locationId}
+                                onChange={this.handleFieldChange}
+                            >
+                                {this.state.locations.map(location =>
+                                    <option key={location.id} value={location.id}>
+                                        {location.street}
+                                    </option>
+                                )}
+                            </select>
                         </div>
                         <div className="alignRight">
                             <button type="button" disabled={this.state.loadingStatus}
