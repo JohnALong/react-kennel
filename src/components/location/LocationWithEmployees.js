@@ -19,10 +19,13 @@ class LocationWithEmployees extends Component {
         })
     }
 
+    // need to refactor EmployeeEditForm and delete buttons still
+
     render(){
         return (
           <div className="card">
-            <p>Location: {this.state.location.street}</p>
+            <p>Street Address: {this.state.location.street}</p>
+            <p>City: {this.state.location.city}</p>
             {this.state.employees.map(employee =>
               <EmployeeCard
                 key={employee.id}

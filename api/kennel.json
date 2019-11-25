@@ -16,12 +16,19 @@
       "id": 5,
       "name": "Angus",
       "breed": "Gerbil",
-      "employeeId": 3
+      "employeeId": 1
     },
     {
       "name": "Kitty",
       "breed": "Cat",
-      "id": 6
+      "id": 6,
+      "employeeId": 1
+    },
+    {
+      "id": 7,
+      "name": "Basil",
+      "breed": "Persian cat",
+      "employeeId": 3
     }
   ],
   "employeeAnimals": [],
@@ -29,7 +36,7 @@
     {
       "id": 1,
       "name": "Sarah",
-      "title": "manager",
+      "title": "lead manager",
       "locationId": 1
     },
     {
@@ -43,6 +50,12 @@
       "name": "Stephanie",
       "title": "Asst Veteranarian",
       "locationId": 3
+    },
+    {
+      "name": "Adam Sandler",
+      "title": "head penguin guy",
+      "locationId": 2,
+      "id": 4
     }
   ],
   "locations": [
