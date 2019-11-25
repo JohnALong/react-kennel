@@ -11,9 +11,9 @@ export default {
   },
   delete(items, id) {
     return fetch(`${remoteURL}/${items}/${id}`, {
-        method: "DELETE"
+      method: "DELETE"
     })
-    .then(result => result.json())
+      .then(result => result.json())
   },
   post(items, newItem) {
     return fetch(`${remoteURL}/${items}`, {
@@ -24,13 +24,17 @@ export default {
       body: JSON.stringify(newItem)
     }).then(data => data.json())
   },
-  update(items, editedAnimal) {
-    return fetch(`${remoteURL}/${items}/${editedAnimal.id}`, {
+  update(items, editedItem) {
+    return fetch(`${remoteURL}/${items}/${editedItem.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(editedAnimal)
+      body: JSON.stringify(editedItem)
     }).then(data => data.json());
+  },
+  getWithItems(items, id, secondaryItems) {
+    return fetch(`${remoteURL}/${items}/${id}?_embed=${secondaryItems}`)
+      .then(result => result.json())
   }
 }

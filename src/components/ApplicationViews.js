@@ -13,11 +13,13 @@ import LocationList from './location/LocationList'
 import LocationDetail from "./location/LocationDetail"
 import LocationForm from "./location/LocationForm"
 import LocationEditForm from './location/LocationEditForm'
+import LocationWithEmployees from './location/LocationWithEmployees'
 
 import EmployeeList from './employee/EmployeeList'
 import EmployeeDetail from "./employee/EmployeeDetail"
 import EmployeeForm from "./employee/EmployeeForm"
 import EmployeeEditForm from './employee/EmployeeEditForm'
+import EmployeeWithAnimals from './employee/EmployeeWithAnimals'
 
 import OwnerList from './owner/OwnerList'
 import OwnerDetail from "./owner/OwnerDetail"
@@ -97,13 +99,17 @@ class ApplicationViews extends Component {
         <Route path="/employees/:employeeId(\d+)/edit" render={props => {
           return <EmployeeEditForm {...props} />
         }} />
+        {/* route for handling employees assigned to animals */}
+        <Route path="/employees/:employeeId(\d+)/details" render={(props) => {
+          return <EmployeeWithAnimals {...props} />
+        }} />
 
         {/* 4 paths for locations */}
         <Route path="/locations/new" render={(props) => {
           return <LocationForm {...props} />
         }} />
         <Route exact path="/locations" render={(props) => {
-           if (this.isAuthenticated()) {
+          if (this.isAuthenticated()) {
             return <LocationList {...props} />
           } else {
             return <Redirect to="/login" />
@@ -116,13 +122,16 @@ class ApplicationViews extends Component {
         <Route path="/locations/:locationId(\d+)/edit" render={props => {
           return <LocationEditForm {...props} />
         }} />
+        <Route path="/locations/:locationId(\d+)/details" render={(props) => {
+          return <LocationWithEmployees {...props} />
+        }} />
 
         {/* 4 paths for owners */}
         <Route path="/owners/new" render={(props) => {
           return <OwnerForm {...props} />
         }} />
         <Route exact path="/owners" render={(props) => {
-           if (this.isAuthenticated()) {
+          if (this.isAuthenticated()) {
             return <OwnerList {...props} />
           } else {
             return <Redirect to="/login" />
