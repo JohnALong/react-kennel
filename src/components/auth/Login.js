@@ -19,41 +19,37 @@ class Login extends Component {
 
   handleLogin = (e) => {
     e.preventDefault()
+    this.props.setUser({
+      email: this.state.email,
+      password: this.state.password
+    })
+    this.props.history.push("/animals");
     /*
         For now, just store the email and password that
         the customer enters into local storage.
     */
-    localStorage.setItem(
-        "credentials",
-        JSON.stringify({
-            email: this.state.email,
-            password: this.state.password
-        })
-    )
-    this.props.history.push("/");
-
   }
 
   render() {
     return (
       <form onSubmit={this.handleLogin}>
         <fieldset>
-            <h3>Please sign in</h3>
-            <div className="formgrid">
-                <input onChange={this.handleFieldChange} type="email"
-                    id="email"
-                    placeholder="Email address"
-                    required="" autoFocus="" />
-                <label htmlFor="inputEmail">Email address</label>
+          <h3>Please sign in</h3>
+          <div className="formgrid">
+            <input onChange={this.handleFieldChange} type="email"
+              id="email"
+              placeholder="Email address"
+              required="" autoFocus="" />
+            <label htmlFor="inputEmail">Email address</label>
 
-                <input onChange={this.handleFieldChange} type="password"
-                    id="password"
-                    placeholder="Password"
-                    required="" />
-                <label htmlFor="inputPassword">Password</label>
-            </div>
-            <button type="submit">
-                Sign in
+            <input onChange={this.handleFieldChange} type="password"
+              id="password"
+              placeholder="Password"
+              required="" />
+            <label htmlFor="inputPassword">Password</label>
+          </div>
+          <button type="submit">
+            Sign in
             </button>
         </fieldset>
       </form>
