@@ -36,13 +36,13 @@ import OwnerEditForm from './owner/OwnerEditForm'
 
 // notice paramater/argument of props - this is what gives the data to each function call to populate the info to the dom
 class ApplicationViews extends Component {
-  // check if credentials are in local storage, returns true/false
-  isAuthenticated = () => localStorage.getItem("credentials") !== null
   render() {
     return (
       <React.Fragment>
         {/*render login path*/}
-        <Route path="/login" component={Login} />
+        <Route path="/login" render={(props) => {
+          return <Login setUser={this.props.setUser} {...props} />
+        }} />
         {/* base route */}
         <Route exact path="/" render={(props) => {
           return <Home />
@@ -59,7 +59,7 @@ class ApplicationViews extends Component {
 
         {/* Make sure you add the `exact` attribute here */}
         <Route exact path="/animals" render={props => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <AnimalList {...props} />
           } else {
             return <Redirect to="/login" />
@@ -86,7 +86,7 @@ class ApplicationViews extends Component {
         }} />
         {/* Make sure you add the `exact` attribute here */}
         <Route exact path="/employees" render={(props) => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <EmployeeList {...props} />
           } else {
             return <Redirect to="/login" />
@@ -109,11 +109,7 @@ class ApplicationViews extends Component {
           return <LocationForm {...props} />
         }} />
         <Route exact path="/locations" render={(props) => {
-          if (this.isAuthenticated()) {
-            return <LocationList {...props} />
-          } else {
-            return <Redirect to="/login" />
-          }
+          return <LocationList {...props} />
         }} />
         <Route exact path="/locations/:locationId(\d+)" render={(props) => {
           // Pass the locationId to the LocationDetailComponent
@@ -131,7 +127,7 @@ class ApplicationViews extends Component {
           return <OwnerForm {...props} />
         }} />
         <Route exact path="/owners" render={(props) => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <OwnerList {...props} />
           } else {
             return <Redirect to="/login" />
